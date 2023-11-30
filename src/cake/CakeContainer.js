@@ -17,6 +17,7 @@ const CakeContainer = () => {
 				  ],
 				  price: 5,
 				   rating: 5
+				   
 			},
 			{
 				 cakeName: "Tea Loaf",
@@ -30,6 +31,7 @@ const CakeContainer = () => {
 				  ],
 				  price: 2,
 				  rating: 3
+				  
 			},
 			{
 				 cakeName: "Carrot Cake",
@@ -43,15 +45,20 @@ const CakeContainer = () => {
 				   ],
 				   price: 8,
 				   rating: 5
+				   
 			} 
 		]		
 	)
 
+	const mappedCakes = listOfCakes.map((cake) => {
+		return <Cake cake={cake}/>
+	})
+
   return (
     <>
-        <Cake />
-        <Cake />
-        <Cake />
+        <div className="container">
+			{mappedCakes}
+		</div>
     </>
   )
 }
