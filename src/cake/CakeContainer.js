@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Cake from "./Cake.js";
+import CakeForm from "./CakeForm.js";
+import { hasFormSubmit } from "@testing-library/user-event/dist/utils/index.js";
 
 const CakeContainer = () => {
 
@@ -54,8 +56,17 @@ const CakeContainer = () => {
 		return <Cake cake={cake}/>
 	})
 
+	const handleNewCakeSubmission = (newCake) => {
+		const updatedCakes = [... listOfCakes];
+		updatedCakes.push(newCake);
+		setListOfCakes(updatedCakes);
+
+	}
+
   return (
     <>
+		<CakeForm onNewCakeSubmission={handleNewCakeSubmission}/>
+		<hr />
         <div className="container">
 			{mappedCakes}
 		</div>

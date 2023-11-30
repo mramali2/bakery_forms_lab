@@ -5,7 +5,7 @@ const Cake = ({cake}) => {
 
   return (
     <div className = "cake">
-      <h3>{cake.cakeName}</h3>
+      <h3>{cake.name}</h3>
       <h4>Ingredients:</h4>
       <ul>
         {cake.ingredients.map(ingredient => {
